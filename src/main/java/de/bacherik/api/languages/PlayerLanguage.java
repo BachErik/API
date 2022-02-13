@@ -1,0 +1,39 @@
+package de.bacherik.api.languages;
+
+import de.niklas.nikapi.spigot.config.YAMLConfig;
+
+import java.io.IOException;
+
+public class PlayerLanguage {
+
+    private YAMLConfig config;
+
+    public PlayerLanguage(String destination, String configName) {
+        try {
+            config = new YAMLConfig("plugins/" + destination + "/languages", configName + ".yml");
+            getConfig().save();
+        } catch(IOException exception) {
+            exception.printStackTrace();
+        }
+    }
+    /*public PlayerLanguage(String destination) {
+        try {
+            config = new YAMLConfig("plugins/" + destination + "/languages", "language.yml");
+            getConfig().save();
+        } catch(IOException exception) {
+            exception.printStackTrace();
+        }
+    }*/
+    public String getValue(String key) throws IOException {
+        if(!getConfig().existEntry(key)) return null;
+        return getConfig().getString(key);
+    }
+    public void setEntry(String key, Object value) throws IOException {
+        getConfig().addEntry(key, value);
+        getConfig().save();
+    }
+
+    public YAMLConfig getConfig() throws IOException {
+        return config;
+    }
+}

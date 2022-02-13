@@ -1,0 +1,6 @@
+name: API
+version: '${project.version}'
+main: de.bacherik.api.Main
+api-version: 1.18
+authors: [ BachErik ]
+description: BachErik's API
