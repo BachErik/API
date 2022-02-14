@@ -29,7 +29,7 @@ public class PlayerLanguage {
     }
 
     public void setPlayerLanguage(String configDestination, String player) throws IOException {
-        config = new YAMLConfig("plugins/API/PlayerLanguages.yml");
+        config = new YAMLConfig("plugins/API/", "PlayerLanguages.yml");
         getConfig().save();
         getConfig().addEntry(player, configDestination);
         getConfig().save();
