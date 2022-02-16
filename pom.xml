@@ -78,7 +78,7 @@
         <dependency>
             <groupId>com.github.LetsPlayNik</groupId>
             <artifactId>NikAPI</artifactId>
-            <version>9f1b70cdcd2a8ed7d0552d7fbac77a0328b6ae8b</version>
+            <version>6c79cf91c226c81190414a8427e7c81588063c26</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
