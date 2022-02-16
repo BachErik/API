@@ -33,13 +33,13 @@ public class PlayerLanguage {
     }
 
     public void setPlayerLanguage(String configDestination, String player) throws IOException {
-        config = new YAMLConfig("plugins/API/" + "PlayerLanguages.yml");
+        config = new YAMLConfig("plugins/API/"+ "/languages/" + "PlayerLanguages.yml");
         getConfig().save();
         getConfig().addEntry(player, configDestination);
         getConfig().save();
     }
     public String setMessage(String message, String player) throws IOException {
-        config = new YAMLConfig("plugins/API/" + "PlayerLanguages.yml");
+        config = new YAMLConfig("plugins/API/" + "/languages/" + "PlayerLanguages.yml");
         String Player = getConfig().getString(player);
         config = new YAMLConfig(Player);
         return getConfig().getString(message);
