@@ -16,14 +16,16 @@ public class PlayerLanguage {
             exception.printStackTrace();
         }
     }
-    public PlayerLanguage() {
-    }
     public String getValue(String key) throws IOException {
         if(!getConfig().existEntry(key)) return null;
         return getConfig().getString(key);
     }
     public void setEntry(String key, Object value) throws IOException {
         getConfig().addEntry(key, value);
+        getConfig().save();
+    }
+    public void setDefaultEntry(String key, Object value) throws IOException {
+        getConfig().addDefaultEntry(key, value);
         getConfig().save();
     }
     public YAMLConfig getConfig() throws IOException {
