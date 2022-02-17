@@ -16,6 +16,9 @@ public class PlayerLanguage {
             exception.printStackTrace();
         }
     }
+    public PlayerLanguage(){
+
+    }
     public String getValue(String key) throws IOException {
         if(!getConfig().existEntry(key)) return null;
         return getConfig().getString(key);
