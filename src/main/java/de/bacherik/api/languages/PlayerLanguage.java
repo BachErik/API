@@ -16,9 +16,6 @@ public class PlayerLanguage {
             exception.printStackTrace();
         }
     }
-    public PlayerLanguage(){
-
-    }
     public String getValue(String key) throws IOException {
         if(!getConfig().existEntry(key)) return null;
         return getConfig().getString(key);
@@ -40,9 +37,6 @@ public class PlayerLanguage {
         getConfig().save();
         getConfig().addEntry(player, configDestination);
         getConfig().save();
-    }
-    public YAMLConfig getAPIConfig() throws IOException {
-        return new YAMLConfig("plugins/API/" + "/languages/" + "PlayerLanguages.yml");
     }
     public String setMessage(String message, String player) throws IOException {
         config = new YAMLConfig("plugins/API/" + "/languages/" + "PlayerLanguages.yml");
